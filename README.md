@@ -1,18 +1,16 @@
 <p align="center">
-    <img src="https://img.icons8.com/external-flat-juicy-fish/80/000000/external-coding-coding-and-development-flat-flat-juicy-fish.png" alt="Project Logo" width="110"/>
+  <img src="https://img.icons8.com/external-flat-juicy-fish/80/000000/external-coding-coding-and-development-flat-flat-juicy-fish.png" alt="Project Logo" width="110"/>
 </p>
 
-<h1 align="center" style="font-size:2.5em;">C++ Project 🚀</h1>
+<h1 align="center">🚀 C++ Project</h1>
+
+<p align="center"><b>A modern, organized collection of C++ programs for mastering Data Structures, Algorithms, and core C++ concepts.</b></p>
 
 <p align="center">
-    <b>A modern, organized collection of C++ programs for mastering Data Structures, Algorithms, and core C++ concepts.</b>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/github/languages/top/bhanuTeja8/cpp-project?style=for-the-badge" alt="Language Badge"/>
-    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License Badge"/>
-    <img src="https://img.shields.io/github/stars/bhanuTeja8/cpp-project?style=for-the-badge" alt="Stars Badge"/>
-    <img src="https://img.shields.io/github/forks/bhanuTeja8/cpp-project?style=for-the-badge" alt="Forks Badge"/>
+  <img src="https://img.shields.io/github/languages/top/bhanuTeja8/cpp-project?style=for-the-badge" alt="Language Badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License Badge"/>
+  <img src="https://img.shields.io/github/stars/bhanuTeja8/cpp-project?style=for-the-badge" alt="Stars Badge"/>
+  <img src="https://img.shields.io/github/forks/bhanuTeja8/cpp-project?style=for-the-badge" alt="Forks Badge"/>
 </p>
 
 ---
