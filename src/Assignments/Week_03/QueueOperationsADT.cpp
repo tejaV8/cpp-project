@@ -36,6 +36,7 @@ void dequeue()
         front++;
     }
 }
+
 void traversal()
 {
     if (front == -1 && rear == -1)
@@ -50,6 +51,7 @@ void traversal()
     }
     cout << endl;
 }
+
 void search(int value)
 {
     if (front == -1 && rear == -1)
