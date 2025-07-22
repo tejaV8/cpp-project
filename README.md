@@ -99,7 +99,8 @@ If you find a bug or want to request a feature:
 ## ✍️ Author
 
 **Bhanu Teja**  
-[🔗 GitHub Profile »](https://github.com/bhanuTeja8)
+🔗 [GitHub Profile »](https://github.com/bhanuTeja8)
+
 
 ---
 
