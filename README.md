@@ -10,7 +10,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/languages/top/bhanuTeja8/cpp-project?style=for-the-badge" alt="Language Badge"/>
-    <img src="https://img.shields.io/github/license/bhanuTeja8/cpp-project?style=for-the-badge" alt="License Badge"/>
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License Badge"/>
     <img src="https://img.shields.io/github/stars/bhanuTeja8/cpp-project?style=for-the-badge" alt="Stars Badge"/>
     <img src="https://img.shields.io/github/forks/bhanuTeja8/cpp-project?style=for-the-badge" alt="Forks Badge"/>
 </p>
