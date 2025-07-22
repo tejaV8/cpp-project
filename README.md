@@ -41,16 +41,15 @@ cpp-project/
 
 ## ⚙️ Features
 
-- 🗂️ **Clean separation** of source and binary files
-- 📂 All source code in the `src/` directory
-- 🛠️ All `.exe` files generated in `bin/` — no clutter in `src/`
-- ⚡ Pre-configured `tasks.json` and `launch.json` for:
-    - One-click **build and run** in VS Code
-    - Full debug support
-- 💡 Includes programs on:
-    - Recursive & Non-recursive algorithms
-    - Linked Lists, Queues, Stacks
-    - Pattern printing and C++ fundamentals
+✅ **Organized Layout** — Clean separation of source (`src/`) and binaries (`bin/`)  
+⚙️ **VS Code Ready** — Pre-configured `tasks.json` and `launch.json` for quick run/debug  
+🛠️ **No Clutter** — All `.exe` files are output to `bin/`, keeping `src/` tidy  
+📘 **C++ Practice Hub** — Includes programs on:
+
+- Recursion (recursive & non-recursive)
+- Linked Lists, Queues, Stacks
+- Pattern printing and other fundamental logic
+
 
 ---
 
@@ -87,10 +86,20 @@ bin/
 
 ---
 
+## 🐞 Reporting Issues
+
+If you find a bug or want to request a feature:
+
+- Open an [issue here](https://github.com/bhanuTeja8/cpp-project/issues)
+- Describe the problem clearly
+- Attach code snippets, screenshots, or errors if possible
+
+---
+
 ## ✍️ Author
 
 **Bhanu Teja**  
-[GitHub Profile](https://github.com/bhanuTeja8)
+[🔗 GitHub Profile »](https://github.com/bhanuTeja8)
 
 ---
 
