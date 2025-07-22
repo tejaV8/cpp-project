@@ -60,7 +60,6 @@ void search(int value) {
 
 int main() {
     int choice, value;
-    
     cout<< "---Stack Operations Menu---\n";
     cout << "1. Push\n";
     cout << "2. Pop\n";

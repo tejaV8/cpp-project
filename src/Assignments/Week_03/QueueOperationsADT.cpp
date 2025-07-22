@@ -36,7 +36,6 @@ void dequeue()
         front++;
     }
 }
-
 void traversal()
 {
     if (front == -1 && rear == -1)
