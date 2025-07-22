@@ -27,7 +27,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
     do {
         cout << "\n---- Linear Search Menu ----\n";
         cout << "1. Iterative Linear Search\n";
