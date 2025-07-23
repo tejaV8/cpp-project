@@ -73,26 +73,13 @@ void insertAtPosition(int pos) {
     }
 
     cur = head;
-    int index = 1;
-
-    while (cur != NULL && index < pos - 1) {
-        cur = cur->next;
-        index++;
-    }
-
-    if (cur == NULL) {
-        cout << "Position " << pos << " does not exist.\n";
-        int choice;
-        cout << "Do you want to insert at:\n1. Beginning\n2. End\nEnter choice: ";
-        cin >> choice;
-        if (choice == 1) {
-            insertAtBeginning();
-        } else if (choice == 2) {
+    for (int i = 1; i < pos - 1; i++) {
+        if (cur->next == head) {
+            cout << "Position " << pos << " is out of bounds. Inserting at end.\n";
             insertAtEnd();
-        } else {
-            cout << "Invalid choice.\n";
+            return;
         }
-        return;
+        cur = cur->next;
     }
 
     create();
@@ -101,6 +88,7 @@ void insertAtPosition(int pos) {
 
     cout << "Element " << New_node->data << " inserted at position " << pos << ".\n";
 }
+
 
 void deleteFromBeginning()
 {
