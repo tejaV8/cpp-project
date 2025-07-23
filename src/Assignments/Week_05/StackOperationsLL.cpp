@@ -109,7 +109,7 @@ int main() {
                 search(ele);
                 break;
             case 6:
-                cout << "Exiting program. All operations completed.\n";
+                cout << "Exiting...\n";
                 break;
             default:
                 cout << "Invalid choice. Please try again.\n";
