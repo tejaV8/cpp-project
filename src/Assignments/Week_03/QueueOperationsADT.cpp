@@ -4,17 +4,31 @@ using namespace std;
 int front = -1, rear = -1;
 int queue[MAX];
 
+#include <iostream>
+using namespace std;
+
+#define MAX 5
+int queue[MAX];
+int front = -1, rear = -1;
+
 void enqueue(int value)
 {
     if (rear == MAX - 1)
     {
         cout << "Queue Overflow\n";
+        return;
     }
-
+    else if (front == -1 && rear == -1)
+    {
+        front = rear = 0;
+        queue[rear] = value;
+    }
+    else
+    {
+        rear++;
+        queue[rear] = value;
+    }
     cout << "Enqueuing " << value << " into queue.\n";
-    front = 0;
-    rear++;
-    queue[rear] = value;
 }
 
 void dequeue()
