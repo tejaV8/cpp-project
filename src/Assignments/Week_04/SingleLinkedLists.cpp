@@ -1,32 +1,46 @@
 #include <iostream>
 using namespace std;
 
-struct node {
+struct node
+{
     int data;
     struct node *next;
 };
 
 struct node *head = NULL, *New_node, *temp, *cur;
 
-void create() {
+void create()
+{
     New_node = new node();
     cout << "Enter data: ";
     cin >> New_node->data;
     New_node->next = NULL;
 }
 
-void insertAtBeginning() {
+void insertAtBeginning()
+{
     create();
-    New_node->next = head;
-    head = New_node;
+    if (head == NULL)
+    {
+        head = New_node;
+    }
+    else
+    {
+        New_node->next = head;
+        head = New_node;
+    }
     cout << "Node inserted at beginning.\n";
 }
 
-void insertAtLast() {
+void insertAtLast()
+{
     create();
-    if (head == NULL) {
+    if (head == NULL)
+    {
         head = New_node;
-    } else {
+    }
+    else
+    {
         temp = head;
         while (temp->next != NULL)
             temp = temp->next;
@@ -36,33 +50,48 @@ void insertAtLast() {
 }
 
 void insertAtPosition(int pos) {
-    if (pos <= 0) {
-        cout << "Invalid position.\n";
+    if (pos < 1) {
+        cout << "Invalid position!" << endl;
         return;
     }
 
-    if (pos == 1 || head == NULL) {
+    if (head == NULL && pos > 1) {
+        cout << "List is empty. Only position 1 is valid.\n";
+        return;
+    }
+
+    if (pos == 1) {
         insertAtBeginning();
         return;
     }
 
-    create();
-    temp = head;
-    for (int i = 1; i < pos - 1 && temp != NULL; i++)
-        temp = temp->next;
-
-    if (temp == NULL) {
-        cout << "Position out of bounds. Inserting at end.\n";
-        insertAtLast();
-    } else {
-        New_node->next = temp->next;
-        temp->next = New_node;
-        cout << "Node inserted at position " << pos << ".\n";
+    cur = head;
+    for (int i = 1; i < pos - 1 && cur != NULL; i++) {
+        cur = cur->next;
     }
+
+    if (cur == NULL) {
+        cout << "Position does not exist. Do you want to insert at the end? (y/n): ";
+        char choice;
+        cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            insertAtLast();
+        } else {
+            cout << "Insertion cancelled.\n";
+        }
+        return;
+    }
+
+    create();
+    New_node->next = cur->next;
+    cur->next = New_node;
+    cout << "Node inserted at position " << pos << ".\n";
 }
 
-void deleteFromBeginning() {
-    if (head == NULL) {
+void deleteFromBeginning()
+{
+    if (head == NULL)
+    {
         cout << "List is empty.\n";
         return;
     }
@@ -72,12 +101,15 @@ void deleteFromBeginning() {
     cout << "Node deleted from beginning.\n";
 }
 
-void deleteFromLast() {
-    if (head == NULL) {
+void deleteFromLast()
+{
+    if (head == NULL)
+    {
         cout << "List is empty.\n";
         return;
     }
-    if (head->next == NULL) {
+    if (head->next == NULL)
+    {
         delete head;
         head = NULL;
         cout << "Node deleted from last.\n";
@@ -91,56 +123,72 @@ void deleteFromLast() {
     cout << "Node deleted from last.\n";
 }
 
-void deleteFromPosition(int pos) {
-    if (pos <= 0) {
+void deleteFromPosition(int pos)
+{
+    if (pos <= 0)
+    {
         cout << "Invalid position.\n";
         return;
     }
-    if (head == NULL) {
+
+    if (head == NULL)
+    {
         cout << "List is empty.\n";
         return;
     }
-    if (pos == 1) {
+
+    if (pos == 1)
+    {
         deleteFromBeginning();
         return;
     }
-    temp = head;
-    for (int i = 1; i < pos - 1 && temp != NULL; i++)
-        temp = temp->next;
 
-    if (temp == NULL || temp->next == NULL) {
-        cout << "Position does not exist.\n";
-        return;
+    cur = head;
+    for (int i = 1; i < pos; i++)
+    {
+        temp = cur;
+        cur = cur->next;
+        if (cur == NULL)
+        {
+            cout << "Position does not exist.\n";
+            return;
+        }
     }
 
-    cur = temp->next;
     temp->next = cur->next;
     delete cur;
     cout << "Node deleted from position " << pos << ".\n";
 }
 
-void display() {
-    if (head == NULL) {
+void display()
+{
+    if (head == NULL)
+    {
         cout << "List is empty.\n";
         return;
     }
     temp = head;
     cout << "List elements: ";
-    while (temp != NULL) {
-        cout << temp->data << " ";
+    while (temp != NULL)
+    {
+        cout << temp->data << "->";
         temp = temp->next;
     }
-    cout << endl;
+    cout << "NULL" << endl;
 }
 
-void search(int ele) {
-    if (head == NULL) {
+void search(int ele)
+{
+    if (head == NULL)
+    {
         cout << "List is empty.\n";
         return;
     }
     temp = head;
-    while (temp != NULL) {
-        if (temp->data == ele) {
+    while (temp != NULL)
+    {
+        if (temp->data == ele)
+        {
             cout << "Element " << ele << " found in the list.\n";
             return;
         }
@@ -149,7 +197,8 @@ void search(int ele) {
     cout << "Element " << ele << " not found in the list.\n";
 }
 
-int main() {
+int main()
+{
     int choice, pos, ele;
 
     cout << "--- Singly Linked List Menu ---\n";
@@ -163,46 +212,48 @@ int main() {
     cout << "8. Search Element\n";
     cout << "9. Exit\n";
 
-    do {
+    do
+    {
         cout << "\nEnter your choice: ";
         cin >> choice;
 
-        switch (choice) {
-            case 1:
-                insertAtBeginning();
-                break;
-            case 2:
-                insertAtLast();
-                break;
-            case 3:
-                cout << "Enter position: ";
-                cin >> pos;
-                insertAtPosition(pos);
-                break;
-            case 4:
-                deleteFromBeginning();
-                break;
-            case 5:
-                deleteFromLast();
-                break;
-            case 6:
-                cout << "Enter position: ";
-                cin >> pos;
-                deleteFromPosition(pos);
-                break;
-            case 7:
-                display();
-                break;
-            case 8:
-                cout << "Enter element to search: ";
-                cin >> ele;
-                search(ele);
-                break;
-            case 9:
-                cout << "Exiting...\n";
-                break;
-            default:
-                cout << "Invalid choice. Please try again.\n";
+        switch (choice)
+        {
+        case 1:
+            insertAtBeginning();
+            break;
+        case 2:
+            insertAtLast();
+            break;
+        case 3:
+            cout << "Enter position: ";
+            cin >> pos;
+            insertAtPosition(pos);
+            break;
+        case 4:
+            deleteFromBeginning();
+            break;
+        case 5:
+            deleteFromLast();
+            break;
+        case 6:
+            cout << "Enter position: ";
+            cin >> pos;
+            deleteFromPosition(pos);
+            break;
+        case 7:
+            display();
+            break;
+        case 8:
+            cout << "Enter element to search: ";
+            cin >> ele;
+            search(ele);
+            break;
+        case 9:
+            cout << "Exiting...\n";
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 9);
 
