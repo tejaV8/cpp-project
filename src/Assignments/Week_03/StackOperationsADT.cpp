@@ -12,7 +12,8 @@ void push(int value)
     }
     else
     {
-        stack[++top] = value;
+        top++;
+        stack[top] = value;
         cout << "Pushed " << value << " onto stack.\n";
     }
 }
