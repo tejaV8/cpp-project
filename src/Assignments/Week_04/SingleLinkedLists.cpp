@@ -49,44 +49,57 @@ void insertAtLast()
     cout << "Node inserted at last.\n";
 }
 
-void insertAtPosition(int pos) {
-    if (pos < 1) {
-        cout << "Invalid position!" << endl;
+void insertAtPosition(int pos)
+{
+    if (pos <= 0)
+    {
+        cout << "Invalid position.\n";
         return;
     }
 
-    if (head == NULL && pos > 1) {
-        cout << "List is empty. Only position 1 is valid.\n";
-        return;
-    }
-
-    if (pos == 1) {
+    if (pos == 1)
+    {
         insertAtBeginning();
         return;
     }
 
-    cur = head;
-    for (int i = 1; i < pos - 1 && cur != NULL; i++) {
-        cur = cur->next;
-    }
-
-    if (cur == NULL) {
-        cout << "Position does not exist. Do you want to insert at the end? (y/n): ";
-        char choice;
-        cin >> choice;
-        if (choice == 'y' || choice == 'Y') {
-            insertAtLast();
-        } else {
-            cout << "Insertion cancelled.\n";
-        }
+    if (head == NULL)
+    {
+        cout << "List is empty. Only position 1 is valid.\n";
         return;
     }
 
+    temp = NULL;
+    cur = head;
+
+    for (int i = 1; i < pos; i++)
+    {
+        temp = cur;
+        cur = cur->next;
+
+        if (cur == NULL && i < pos - 1)
+        {
+            cout << "Position does not exist. Do you want to insert at the end? (y/n): ";
+            char choice;
+            cin >> choice;
+            if (choice == 'y' || choice == 'Y')
+            {
+                insertAtLast();
+            }
+            else
+            {
+                cout << "Insertion cancelled.\n";
+            }
+            return;
+        }
+    }
+
     create();
-    New_node->next = cur->next;
-    cur->next = New_node;
+    temp->next = New_node;
+    New_node->next = cur;
     cout << "Node inserted at position " << pos << ".\n";
 }
+
 
 void deleteFromBeginning()
 {
