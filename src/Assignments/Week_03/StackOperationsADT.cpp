@@ -69,14 +69,15 @@ void search(int value)
         return;
     }
 
-    for (int i = 0; i <= top; i++)
+    for (int i = top; i >= 0; i--)
     {
         if (stack[i] == value)
         {
-            cout << "Element " << value << " found at index " << i << endl;
+            cout << "Element " << value << " found at index " << i << " from top\n";
             return;
         }
     }
+
     cout << "Element " << value << " not found in stack\n";
 }
 
