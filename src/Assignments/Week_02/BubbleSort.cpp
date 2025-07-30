@@ -14,33 +14,35 @@ void bubbleSort(int arr[], int n)
                 swapped = true;
             }
         }
-        if (!swapped)
-        {
-            cout << "Array is already sorted.";
-            break;
-        }
+
         cout << "After pass " << i + 1 << ": ";
         for (int k = 0; k < n; k++)
         {
             cout << arr[k] << " ";
         }
         cout << endl;
+        if (!swapped)
+        {
+            cout << "Array is already sorted." << endl;
+            break;
+        }
     }
 }
 
 int main()
 {
     int size;
-    cout << "Enter number of elements: ";
+    cout << "Enter the size of array: ";
     cin >> size;
 
     int arr[size];
 
-    cout << "Enter elements: ";
+    cout << "Enter " << size << " elements: ";
     for (int i = 0; i < size; i++)
     {
         cin >> arr[i];
     }
+    cout << endl;
     bubbleSort(arr, size);
     cout << "\nSorted array: ";
     for (int i = 0; i < size; i++)
