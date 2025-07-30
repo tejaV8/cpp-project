@@ -63,49 +63,32 @@ void insertAtPosition(int pos)
         return;
     }
 
-    if (pos == 1)
-    {
-        insertAtBeginning();
-        return;
+    if(head == NULL){
+        create();
+        head = New_node;
     }
 
-    temp = head;
-    for (int i = 1; i < pos - 1 && temp != NULL; i++)
-    {
-        temp = temp->next;
-    }
-
-    if (temp == NULL)
-    {
-        int choice;
-        cout << "Position " << pos << " does not exist.\n";
-        cout << "Do you want to insert at:\n1. Beginning\n2. End\nEnter choice: ";
-        cin >> choice;
-        if (choice == 1)
-        {
+    else{
+        cur = head;
+        for(int i = 1; i < pos; i++){
+            if(cur->next == NULL){
+                cout<<"Position does not exist\n";
+                return ;
+            }
+            cur = cur->next;
+        }
+        if(cur == head){
             insertAtBeginning();
+            return;
         }
-        else if (choice == 2)
-        {
-            insertAtEnd();
+        else{
+            create();
+            New_node->next = cur;
+            New_node->prev = cur->prev;
+            cur->prev->next = New_node;
+            cur->prev = New_node;
         }
-        else
-        {
-            cout << "Invalid choice.\n";
-        }
-        return;
     }
-    create();
-    New_node->next = temp->next;
-    New_node->prev = temp;
-
-    if (temp->next != NULL)
-    {
-        temp->next->prev = New_node;
-    }
-
-    temp->next = New_node;
-
     cout << "Element " << New_node->data << " inserted at position " << pos << ".\n";
 }
 
