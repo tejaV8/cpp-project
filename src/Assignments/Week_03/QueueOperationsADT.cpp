@@ -4,13 +4,6 @@ using namespace std;
 int front = -1, rear = -1;
 int queue[MAX];
 
-#include <iostream>
-using namespace std;
-
-#define MAX 5
-int queue[MAX];
-int front = -1, rear = -1;
-
 void enqueue(int value)
 {
     if (rear == MAX - 1)
