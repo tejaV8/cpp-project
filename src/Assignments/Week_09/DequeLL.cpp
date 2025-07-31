@@ -56,13 +56,20 @@ void deleteFromFront()
     }
 
     temp = front;
-    front = front->next;
+
+    if (front == rear)
+    {
+        front = rear = NULL;
+    }
+    else
+    {
+        front = front->next;
+    }
+
     cout << "Element " << temp->data << " deleted from front.\n";
     delete temp;
-
-    if (front == NULL)
-        rear = NULL;
 }
+
 
 void deleteFromRear()
 {
