@@ -9,25 +9,24 @@ void insertAtRear(int ele)
     if ((front == 0 && rear == MAX - 1) || (front == rear + 1))
     {
         cout << "Deque overflow\n";
+        return;
     }
     else if (front == -1 && rear == -1)
     {
         front = rear = 0;
         deque[rear] = ele;
-        cout << "Element " << ele << " inserted at rear.\n";
     }
     else if (rear == MAX - 1)
     {
         rear = 0;
         deque[rear] = ele;
-        cout << "Element " << ele << " inserted at rear.\n";
     }
     else
     {
         rear++;
         deque[rear] = ele;
-        cout << "Element " << ele << " inserted at rear.\n";
     }
+    cout << "Element " << ele << " inserted at rear.\n";
 }
 
 void insertAtFront(int ele)
@@ -35,25 +34,24 @@ void insertAtFront(int ele)
     if ((front == 0 && rear == MAX - 1) || (front == rear + 1))
     {
         cout << "Deque overflow\n";
+        return;
     }
     else if (front == -1 && rear == -1)
     {
         front = rear = 0;
         deque[front] = ele;
-        cout << "Element " << ele << " inserted at front.\n";
     }
     else if (front == 0)
     {
         front = MAX - 1;
         deque[front] = ele;
-        cout << "Element " << ele << " inserted at front.\n";
     }
     else
     {
         front--;
         deque[front] = ele;
-        cout << "Element " << ele << " inserted at front.\n";
     }
+    cout << "Element " << ele << " inserted at front.\n";
 }
 
 void deleteFromFront()
