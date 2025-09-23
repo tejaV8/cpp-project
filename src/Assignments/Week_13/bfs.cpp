@@ -19,8 +19,8 @@ void BFS(int v)
 
     if (f <= r)
     {
-        cout << vertex[v] << "->";
-        BFS(Queue[++f]);
+        cout << vertex[Queue[f++]] << "->";
+        BFS(Queue[f]);
     }
 }
 
