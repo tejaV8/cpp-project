@@ -22,12 +22,13 @@ int linearSearchRecursive(int arr[], int n, int key, int index)
 
 int main()
 {
-    int n,choice, key, result;
+    int n, choice, key, result;
 
     cout << "Enter number of elements: ";
     cin >> n;
 
-    int* arr = new int[n];
+    int *arr = new int[n];
+
     cout << "Enter " << n << " elements: ";
     for (int i = 0; i < n; i++)
     {
