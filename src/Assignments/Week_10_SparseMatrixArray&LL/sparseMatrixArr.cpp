@@ -47,12 +47,15 @@ int main()
     }
 
     cout << "The Sparse Matrix: " << endl;
+    cout << "Row\tCol\tValue" << endl;
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            cout << SM[i][j] << "  ";
+            cout << SM[i][j] << "\t";
         }
         cout << endl;
     }
+
+    return 0;
 }
